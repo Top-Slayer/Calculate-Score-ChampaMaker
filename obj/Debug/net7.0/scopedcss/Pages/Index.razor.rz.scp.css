@@ -1,0 +1,141 @@
+*[b-cd5wifc5l3] {
+    font-family: 'Inter', sans-serif;
+    font-family: 'Noto Sans Lao', sans-serif;
+}
+
+input[b-cd5wifc5l3]{
+    width: 55vw;
+}
+
+.propertie_button[b-cd5wifc5l3] {
+    font-weight: 600;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    color: rgb(255, 255, 255);
+}
+
+.propertie_button_popup[b-cd5wifc5l3] {
+    font-weight: 600;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: none;
+    border-radius: 15px;
+    color: rgb(255, 255, 255);
+}
+
+.green_color[b-cd5wifc5l3] {
+    background-color: rgb(0, 225, 19);
+}
+
+.red_color[b-cd5wifc5l3] {
+    background-color: red;
+}
+
+.background_screen_color[b-cd5wifc5l3] {
+    padding: 50px;
+    background-color: aliceblue;
+    border-radius: 25px;
+}
+
+.propertie_input_number[b-cd5wifc5l3] {
+    padding-left: 10px;
+    border-color: rgb(4, 150, 207);
+    border-radius: 25px;
+    background-color: rgba(225, 225, 225, 0.298);
+}
+
+.propertie_input_number_wrong[b-cd5wifc5l3] {
+    padding-left: 10px;
+    border-color: rgb(232, 16, 16);
+    border-radius: 25px;
+    background-color: rgba(225, 225, 225, 0.298);
+}
+
+.propertie_score[b-cd5wifc5l3] {
+    background-color: rgb(4, 150, 207);
+    color: aliceblue;
+    align-self: center;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 20px;
+    font-weight: 700;
+}
+
+.propertie_score_worng[b-cd5wifc5l3] {
+    background-color: rgb(241, 0, 0);
+    color: aliceblue;
+    width: fit-content;
+    align-self: center;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 20px;
+    font-weight: 700;
+}
+
+.propertie_score_popup[b-cd5wifc5l3]{
+    background-color: rgb(4, 150, 207);
+    color: aliceblue;
+    align-self: center;
+    width: fit-content;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
+    font-weight: 700;
+}
+
+.propertie_team_color_blue[b-cd5wifc5l3] {
+    padding: 10px;
+    background-color: rgb(0, 96, 241);
+    border-radius: 10px;
+    color: aliceblue;
+    border-color: blue;
+}
+
+.propertie_team_color_red[b-cd5wifc5l3] {
+    padding: 10px;
+    background-color: rgb(244, 0, 0);
+    border-radius: 10px;
+    color: aliceblue;
+    border-color: rgb(197, 0, 0);
+}
+
+.wrapper_on[b-cd5wifc5l3] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.wrapper_off[b-cd5wifc5l3] {
+    display: none;
+}
+
+.popup_box[b-cd5wifc5l3] {
+    background-color: aliceblue;
+    border-radius: 25px;
+    padding: 20px;
+    width: 90vw;
+    height: auto;
+}
+
+.not_warning[b-cd5wifc5l3]{
+    display: none;
+}
+
+@media (min-width: 567px) {
+    .popup_box[b-cd5wifc5l3]{
+        width: 500px;
+    }
+}
+@media (min-width: 900px) {
+    input[b-cd5wifc5l3]{
+        width: auto;
+    }
+}

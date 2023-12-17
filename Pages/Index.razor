@@ -1,0 +1,175 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+
+<dir class="background_screen_color">
+    <h2 class="text-center fw-bold">Calculate score of Champa Maker Event <br>23 - 24/12/2023</h2>
+
+    <div class="mt-4">
+        <h4>- Team's name and team's color: ຊື່ທີມ ແລະ ສີທີມ</h4>
+        <div class="ms-4 d-sm-flex">
+            <input type="text" @bind-value="team_name" class="propertie_input_number me-3" placeholder="name...">
+            <button @onclick="ChangeColorTeam"
+                class="mt-3 mt-sm-0 ms-sm-4 @change_propertie_team_color">@change_color_team_text</button>
+        </div>
+    </div>
+
+    <div class="mt-3">
+        <h4>- Bridge ball: ຈໍານວນໝາກບານຈາກຂົວ</h4>
+        <div class="ms-4 d-sm-flex">
+            <input type="number" @bind-value="bridge_ball" min="0" class="propertie_input_number me-3">
+            <div class="propertie_score mt-3 mt-sm-0">+ 10 points</div>
+        </div>
+    </div>
+
+    <div class="mt-3">
+        <h4>- Bottom ball: ຈໍານວນໝາກບານຈາກທາງລຸ່ມ</h4>
+        <div class="ms-4 d-sm-flex">
+            <input type="number" @bind-value="normal_ball" min="0" class="propertie_input_number me-3">
+            <div class="propertie_score mt-3 mt-sm-0">+ 5 points</div>
+        </div>
+    </div>
+
+    <div class="mt-3">
+        <h4>- Wrong ball: ຈໍານວນໝາກບານທີ່ລົງຜິດສີ</h4>
+        <div class="ms-4 d-sm-flex">
+            <input type="number" @bind-value="wrong_ball" min="0" class="propertie_input_number_wrong me-3">
+            <div class="propertie_score_worng mt-3 mt-sm-0">- 3 points</div>
+        </div>
+    </div>
+
+    <div class="mt-3">
+        <h4>- Status on bridge: ສາມາດຂື້ນຂົວທັນເວລາບໍ</h4>
+        <div class="ms-4 d-sm-flex">
+            <button @onclick="() => { ChangeStatusText(); }" class="propertie_button me-3 @change_color_status">Staus:
+                @status_text</button>
+            <div class="propertie_score mt-3 mt-sm-0">+ 10 points</div>
+        </div>
+    </div>
+
+    <br>
+    <div class="mt-3 text-center">
+        <button class="btn btn-primary px-5" @onclick="() => {SumScore();}">Calculate</button>
+    </div>
+
+    <div class="d-flex justify-content-center mt-4 ">
+        <p class="text-danger @warning_text_status">
+            ກະລຸນາຕວດສອບການຕື່ມຈໍານວນຂອງຕົວເລກອີກຄັ້ງ ແນະນໍາ ຫ້າມໃສ່ຈໍານວນທີ່ຕິດລົບ
+        </p>
+    </div>
+
+    @* Pop up all sum screen *@
+    <!-- Button trigger modal -->
+    <div class="@propertie_popup">
+        <div class="popup_box">
+            <div class="d-flex justify-content-end">
+                <button class="exit_propertie" @onclick="PopUpClose">x</button>
+            </div>
+
+            <p>ຊື່ທີມ: @team_name</p>
+
+            <p class="d-flex">- ສີທີມ: @change_color_team_text
+            <div class="@change_propertie_team_color ms-2"></div>
+            </p>
+            <p>- ຄະແນນຈາກຂົວ: @bridge_ball balls | @score_bridge points</p>
+            <p>- ຄະແນນຈາກທາງລຸ່ມ: @normal_ball balls | @score_normal points</p>
+            <p>- ຄະແນນເກັບໝາກບານຜິດ: @wrong_ball balls | @score_wrong points</p>
+            <p class="d-flex align-items-center">- ສະຖານະການຂື້ນຂົວ:
+            <div class="@change_color_status propertie_button_popup ms-3">@status_text</div <div
+                class="ms-2 propertie_score_popup">+ @status_number
+        </div>
+        </p>
+        <br>
+        <p class="d-flex justify-content-center fw-bold">ຄະແນນລວມທັ້ງໝົດ: @sum_score</p>
+    </div>
+    </div>
+</dir>
+
+@code {
+    private string team_name = "";
+
+    private string change_color_team_text = "ທີມສີແດງ Red-Team";
+    private string change_propertie_team_color = "propertie_team_color_red";
+    private bool color_change_status = false;
+
+    private string status_text = "Can't";
+    private string change_color_status = "red_color";
+    private bool status = false;
+
+    private int normal_ball { get; set; }
+    private int bridge_ball { get; set; }
+    private int wrong_ball { get; set; }
+
+    private int sum_score = 0;
+
+    private string propertie_popup = "wrapper_off";
+    private string warning_text_status = "not_warning";
+
+    private int score_bridge;
+    private int score_normal;
+    private int score_wrong;
+    private int status_number = 0;
+
+    private void ChangeColorTeam()
+    {
+        color_change_status = !color_change_status;
+        change_color_team_text = (color_change_status) ? "ທີມສີຟ້າ Blue-Team" : "ທີມສີແດງ Red-Team";
+        change_propertie_team_color = (color_change_status) ? "propertie_team_color_blue" : "propertie_team_color_red";
+    }
+
+    void ChangeStatusText()
+    {
+        status = !status;
+        status_text = (status) ? "Can" : "Can't";
+        change_color_status = (status) ? "green_color" : "red_color";
+        status_number = (status) ? 10 : 0;
+    }
+
+    void PopUpOpen()
+    {
+        propertie_popup = "wrapper_on";
+    }
+    void PopUpClose()
+    {
+        propertie_popup = "wrapper_off";
+    }
+
+    public void SumScore()
+    {
+        if (bridge_ball < 0 || normal_ball < 0 || wrong_ball < 0)
+        {
+            warning_text_status = "";
+            return;
+        }
+
+        score_bridge = bridge_ball * 10;
+        score_normal = normal_ball * 5;
+        score_wrong = wrong_ball * -3;
+
+        if (status)
+        {
+            sum_score = 10 + score_bridge + score_normal + score_wrong;
+        }
+        else
+        {
+            sum_score = score_bridge + score_normal + score_wrong;
+        }
+
+        warning_text_status = "not_warning";
+
+        PopUpOpen();
+        DisplayTest();
+    }
+
+    void DisplayTest()
+    {
+        Console.WriteLine($"Name team: {team_name}");
+        Console.WriteLine($"Team color: {change_color_team_text}");
+        Console.WriteLine($"Bridge ball: {bridge_ball} | Score: {bridge_ball * 10}");
+        Console.WriteLine($"Bottom ball: {normal_ball} | Score: {normal_ball * 5}");
+        Console.WriteLine($"Wrong ball: {wrong_ball} | Score: {-wrong_ball * 3}");
+        Console.WriteLine($"Status on bridge: {status_text}");
+        Console.WriteLine($"Sum score: {sum_score}\n");
+    }
+}
