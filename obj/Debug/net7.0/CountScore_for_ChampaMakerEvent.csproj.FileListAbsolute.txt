@@ -826,3 +826,8 @@ C:\Education about Programming - TOP\Blazor\CountScore_for_ChampaMakerEvent\obj\
 C:\Education about Programming - TOP\Blazor\CountScore_for_ChampaMakerEvent\obj\Debug\net7.0\CountScore_for_ChampaMakerEvent.pdb
 C:\Education about Programming - TOP\Blazor\CountScore_for_ChampaMakerEvent\obj\Debug\net7.0\ref\CountScore_for_ChampaMakerEvent.dll
 C:\Education about Programming - TOP\Blazor\CountScore_for_ChampaMakerEvent\obj\Debug\net7.0\scopedcss\Pages\Index.razor.rz.scp.css
+C:\Education about Programming - TOP\Blazor\CountScore_for_ChampaMakerEvent\bin\Debug\net7.0\release\web.config
+C:\Education about Programming - TOP\Blazor\CountScore_for_ChampaMakerEvent\bin\Debug\net7.0\firebase.json
+C:\Education about Programming - TOP\Blazor\CountScore_for_ChampaMakerEvent\bin\Debug\net7.0\release\firebase.json
+C:\Education about Programming - TOP\Blazor\CountScore_for_ChampaMakerEvent\bin\Debug\net7.0\release\wwwroot\sample-data\weather.json
+C:\Education about Programming - TOP\Blazor\CountScore_for_ChampaMakerEvent\bin\Debug\net7.0\release\wwwroot\_framework\blazor.boot.json

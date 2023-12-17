@@ -1,0 +1,6 @@
+C:\Education about Programming - TOP\Blazor\CountScore_for_ChampaMakerEvent\bin\Debug\net7.0\publish\release\web.config
+C:\Education about Programming - TOP\Blazor\CountScore_for_ChampaMakerEvent\bin\Debug\net7.0\publish\firebase.json
+C:\Education about Programming - TOP\Blazor\CountScore_for_ChampaMakerEvent\bin\Debug\net7.0\publish\release\firebase.json
+C:\Education about Programming - TOP\Blazor\CountScore_for_ChampaMakerEvent\bin\Debug\net7.0\publish\release\wwwroot\sample-data\weather.json
+C:\Education about Programming - TOP\Blazor\CountScore_for_ChampaMakerEvent\bin\Debug\net7.0\publish\release\wwwroot\_framework\blazor.boot.json
+C:\Education about Programming - TOP\Blazor\CountScore_for_ChampaMakerEvent\bin\Debug\net7.0\publish\web.config
